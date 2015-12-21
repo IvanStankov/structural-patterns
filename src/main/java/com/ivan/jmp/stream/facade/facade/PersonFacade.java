@@ -1,5 +1,6 @@
 package com.ivan.jmp.stream.facade.facade;
 
+import com.ivan.jmp.stream.facade.service.api.PersonStoreService;
 import com.ivan.jmp.stream.facade.service.impl.IqService;
 import com.ivan.jmp.stream.facade.service.impl.PersonStoreServiceImpl;
 import com.ivan.jmp.stream.model.Person;
@@ -12,9 +13,9 @@ import java.util.List;
 public class PersonFacade {
 
     private IqService iqService;
-    private PersonStoreServiceImpl personStoreService;
+    private PersonStoreService personStoreService;
 
-    public PersonFacade(IqService iqService, PersonStoreServiceImpl personStoreService) {
+    public PersonFacade(IqService iqService, PersonStoreService personStoreService) {
         this.iqService = iqService;
         this.personStoreService = personStoreService;
     }
