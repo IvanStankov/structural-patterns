@@ -1,6 +1,7 @@
 package com.ivan.jmp.stream.composite.impl;
 
 import com.ivan.jmp.stream.composite.api.FSEntity;
+import com.ivan.jmp.stream.composite.api.FSEntitySaver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,11 @@ public class Directory implements FSEntity {
     private List<FSEntity> siblings = new ArrayList<>();
     private String name;
 
-    public Directory(String name) {
+    private FSEntitySaver fsEntitySaver;
+
+    public Directory(String name, FSEntitySaver fsEntitySaver) {
         this.name = name;
+        this.fsEntitySaver = fsEntitySaver;
     }
 
     @Override
@@ -38,5 +42,10 @@ public class Directory implements FSEntity {
 
     public List<FSEntity> getSiblings() {
         return siblings;
+    }
+
+    @Override
+    public void save() {
+        fsEntitySaver.saveInStore(this);
     }
 }

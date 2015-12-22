@@ -9,4 +9,6 @@ public interface FSEntity {
 
     int size();
 
+    void save();
+
 }

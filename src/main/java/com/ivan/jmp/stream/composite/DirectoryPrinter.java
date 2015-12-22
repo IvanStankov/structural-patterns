@@ -14,7 +14,7 @@ public class DirectoryPrinter {
 
     private void print(Directory directory, String offset) {
         directory.getSiblings().forEach(entity -> {
-            System.out.println(offset + entity.name() + " " + entity.size() + "kB");
+            System.out.println(offset + entity.name() + " " + entity.size() + "kB" + " ");
             if (entity instanceof Directory) {
                 print((Directory) entity, offset + "  ");
             }
